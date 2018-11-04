@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
 import { Card, ListItem } from 'react-native-material-ui';
+import { ProgressDialog } from 'react-native-simple-dialogs';
 
 import MapView from 'react-native-maps';
 import { Marker } from 'react-native-maps';
@@ -25,7 +26,8 @@ class Map extends React.Component {
                 latitude: -15.7942287,
                 longitude: -47.8821658
             },
-            item:{}
+            item:{},
+            loading:true
         };
     }
 
@@ -68,12 +70,12 @@ class Map extends React.Component {
                             latitudeDelta: 0.0922,
                             longitudeDelta: 0.0421,
                         }}
-                        minZoomLevel={12}
-                        maxZoomLevel={12}
+                        minZoomLevel={13}
+                        maxZoomLevel={13}
                         zoomControlEnabled={true}
                         zoomEnabled={true}
                         showsScale={true}
-
+                        onMapReady={()=>this.setState({loading:false})}
                     >
                         {
                             this.props.data.map(sine => {
@@ -85,10 +87,19 @@ class Map extends React.Component {
                                         }}
                                         key={sine["Código Posto"]}
                                         onPress={() => this.showSine(sine)}
+                                        pinColor="#1b5e20"
                                     />
                                     )
                                 }
                         )}
+                        <Marker
+                            coordinate={{
+                                latitude: this.state.position.latitude,
+                                longitude: this.state.position.longitude
+                            }}
+                            title="Você"
+                            pinColor="#0081d1"
+                        />
                     </MapView>
                     {
                         this.state.item["Nome Posto"] && (
@@ -106,6 +117,10 @@ class Map extends React.Component {
                         )
                     }
                 </View>
+                <ProgressDialog
+                    visible={this.state.loading}
+                    message="Carregando..."
+                />
             </View>
         );
     }

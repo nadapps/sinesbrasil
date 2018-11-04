@@ -8,6 +8,7 @@ import Map from '../components/Map';
 import List from '../components/List';
 import { get } from '../services/sine';
 import { getState,states } from '../utils/constants';
+import SplashScreen from 'react-native-splash-screen'
 
 export default class HomeScreen extends React.Component {
     constructor(props) {
@@ -26,6 +27,7 @@ export default class HomeScreen extends React.Component {
     componentDidMount(){
         let data = get();
         this.setState({data,dataAll:data});
+        SplashScreen.hide();
     }
 
     onPress(state){

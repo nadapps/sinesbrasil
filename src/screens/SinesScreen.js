@@ -69,7 +69,7 @@ export default class SinesScreen extends React.Component {
                     onLeftElementPress={ () => this.props.navigation.pop() }
                 />
                 <FlatList
-                    style={{flex:1}}
+                    style={{flex:1,marginTop:3,marginBottom:3}}
                     keyExtractor={(index) => index+"" }
                     data={this.state.sines}
                     renderItem={this.renderItem} />

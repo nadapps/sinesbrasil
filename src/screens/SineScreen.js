@@ -23,6 +23,7 @@ export default class SinesScreen extends React.Component {
             state: props.navigation.state.params.state,
             direction: false,
             loading: false,
+            marker2: require('../../assets/marker2.png'),
             origin:{}
         };
     }
@@ -108,6 +109,7 @@ export default class SinesScreen extends React.Component {
                                 longitude: this.state.sine.longitude
                             }}
                             title={this.state.sine["Nome Posto"]}
+                            pinColor="#1b5e20"
                         />
                         {
                             this.state.direction && (
@@ -117,6 +119,7 @@ export default class SinesScreen extends React.Component {
                                         longitude: this.state.origin.longitude
                                     }}
                                     title="Você"
+                                    pinColor="#0081d1"
                                 />
                             )
                         }
@@ -180,8 +183,7 @@ export default class SinesScreen extends React.Component {
                 </ScrollView>
                 <ProgressDialog
                     visible={this.state.loading}
-                    title="Progress Dialog"
-                    message="Please, wait..."
+                    message="Carregando..."
                 />
             </View>
         );

@@ -34,7 +34,7 @@ class List extends React.Component {
         return (
             <View style={{flex:1}}>
                 <FlatList
-                    style={{flex:1}}
+                    style={{flex:1,marginTop:3,marginBottom:3}}
                     keyExtractor={(index) => index+"" }
                     data={this.props.states}
                     renderItem={this.renderItem} />
