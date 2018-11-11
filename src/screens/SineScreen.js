@@ -52,10 +52,9 @@ export default class SinesScreen extends React.Component {
                 direction:true
             });
         }, (error) => {
-            
+            this.setState({ loading:false });
         }, {
-            enableHighAccuracy: true,
-            timeout: 5000
+            timeout: 30000
         });
     }
 
@@ -141,7 +140,7 @@ export default class SinesScreen extends React.Component {
                             )
                         }
                     </MapView>
-                    <ActionButton style={{container:{bottom:-45}}} icon="directions" onPress={() => this.direction()} />
+                    <ActionButton style={{container:{bottom:-45,zIndex:10}}} icon="directions" onPress={() => this.direction()} />
                 </View>
                 <ScrollView style={{marginTop:260,zIndex:0}}>
                     <View style={{flex:1, marginBottom:12}}>

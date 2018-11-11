@@ -48,8 +48,7 @@ class Map extends React.Component {
         }, (error) => {
             
         }, {
-            enableHighAccuracy: true,
-            timeout: 5000
+            timeout: 30000
         });
     }
 
@@ -70,8 +69,6 @@ class Map extends React.Component {
                             latitudeDelta: 0.0922,
                             longitudeDelta: 0.0421,
                         }}
-                        minZoomLevel={13}
-                        maxZoomLevel={13}
                         zoomControlEnabled={true}
                         zoomEnabled={true}
                         showsScale={true}
