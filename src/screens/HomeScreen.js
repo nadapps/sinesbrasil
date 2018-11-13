@@ -65,7 +65,7 @@ export default class HomeScreen extends React.Component {
         return (
             <View style={{flex:1}}>
                 <Toolbar
-                    centerElement="SINE Brasil"
+                    centerElement="SINEs Brasil"
                     searchable={
                         this.state.active=="list" ? {
                             autoFocus: true,
@@ -97,7 +97,7 @@ export default class HomeScreen extends React.Component {
 
                 <ConfirmDialog
                     visible={this.state.dialogInfo}
-                    title="SINE Brasil"
+                    title="SINEs Brasil"
                     message="Este aplicativo tem por objetivo mostrar onde se encontram todos os postos do Sistema Nacional de Emprego (SINE). O SINE é uma ferramenta do Ministério do Trabalho que facilita e é responsável por intermediar a mão-de-obra com as vagas de emprego no Brasil."
                     onTouchOutside={() => this.setState({dialogInfo: false})}
                     positiveButton={{

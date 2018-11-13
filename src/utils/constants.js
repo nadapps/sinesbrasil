@@ -1,4 +1,4 @@
-export const APP_NAME = 'SINE Brasil';
+export const APP_NAME = 'SINEs Brasil';
 export const GOOGLE_KEY = "AIzaSyBTujlrjis2lBqwGsnAMhSIJiDe1heozWQ";
 
 export const statesList = [

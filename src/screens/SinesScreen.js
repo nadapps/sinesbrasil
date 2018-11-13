@@ -9,16 +9,16 @@ export default class SinesScreen extends React.Component {
     constructor(props) {
         super(props);
 
-        let sines = getState(props.navigation.state.params.state.estado);
         this.state = {
             state: props.navigation.state.params.state,
-            sines,
-            sinesAll:sines
+            sines:[],
+            sinesAll:[]
         };
     }
 
     componentDidMount(){
-        
+        let sines = getState(this.props.navigation.state.params.state.estado);
+        this.setState({sines, sinesAll:sines});
     }
 
     openSine = (item) => {

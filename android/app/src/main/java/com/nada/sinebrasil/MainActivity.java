@@ -1,4 +1,4 @@
-package com.sinebrasil;
+package com.nada.sinebrasil;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
@@ -12,7 +12,7 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SplashScreen.show(this);
+        SplashScreen.show(this, R.style.SplashScreenTheme);
         super.onCreate(savedInstanceState);
     }
 

@@ -1,4 +1,4 @@
-package com.sinebrasil;
+package com.nada.sinebrasil;
 
 import android.app.Application;
 
